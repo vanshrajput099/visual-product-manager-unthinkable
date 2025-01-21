@@ -1,3 +1,4 @@
+import uvicorn
 from utils.image_to_url import process_image_from_url
 from models.model import Product_Model
 from db.db import collection
@@ -117,3 +118,7 @@ async def image_upload(file: UploadFile = File(...)):
     
 #     finally:
 #         print("Finished processing all products.")
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000)
